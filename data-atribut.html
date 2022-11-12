@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>form</title>
+  </head>
+
+  <body>
+    <span style="display: flex; gap: 10px; align-items: center">
+      <p>Actions :</p>
+      <input type="text" placeholder="Type something..." id="formActions" />
+      <select name="method" id="formMethod">
+        <option value="get">GET</option>
+        <option value="post">POST</option>
+      </select>
+
+      <button type="button" onclick="SetForm()">Set</button>
+    </span>
+
+    <br /><br>
+
+    <form id="form">
+      <div id="formMain">
+        <span style="display: flex; width: 50%; justify-content: space-between">
+          <p>Key</p>
+          <p>Value</p>
+        </span>
+
+        <span class="input" data-id="74Ce5KLkCF">
+          <input type="text" placeholder="key..." id="74Ce5KLkCF-in1" />
+          <p>:</p>
+          <input type="text" placeholder="value..." id="74Ce5KLkCF-in2" />
+        </span>
+      </div>
+
+      <br>
+      <button onclick="AddOtherInput()" type="button" class="clr-success">Add field</button>
+      <button onclick="Show('#AddDataByText')" type="button" class="clr-secondary">Add by text</button>
+      <button type="submit" >Submite</button>
+    </form>
+
+    <form id="AddDataByText" style="display: none;">
+      <p>Please insert data as a JS OBJECT or JSON</p>
+      <p id="AddDataByText-warning"></p>
+      <textarea id="AddDataByText-ta" cols="50" rows="15" style="padding: 5px"></textarea>
+      <br />
+
+      <button onclick="Hide('#AddDataByText')" type="button" class="clr-danger">Hide</button>
+      <button type="button" onclick="AddDataByText()">Submite</button>
+    </form>
+
+    <footer style="float: buttom;">
+      <!-- Designed and built with <a href="https://github.com/yopaaa/">yopaaa</a> -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./script.js"></script>
+    <script>
+      function Show(id) {
+        $(id).show();
+      }
+      function Hide(id) {
+        $(id).hide();
+      }
+    </script>
+  </body>
+</html>
