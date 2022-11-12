@@ -23,6 +23,8 @@ $(document).ready(function () {
 
     $("#form").attr("action", formActions);
     $("#form").attr("method", formMethod);
+    
+    Hide('#changeFormAction-btn');
   }
 
   function AddDataByText() {
@@ -35,7 +37,7 @@ $(document).ready(function () {
       $("#AddDataByText-warning").hide();
 
       Objkey.forEach((Objkey) => {
-        AddOtherInput(Objkey, data[Objkey]);
+        AddOtherInput(Objkey, data[Objkey], Objkey);
       });
     } catch (err) {
       $("#AddDataByText-warning").show().text(err.message);
@@ -43,7 +45,7 @@ $(document).ready(function () {
   }
 
   // ADD ANOTHER INPUT TO FORM
-  function AddOtherInput(val1, val2) {
+  function AddOtherInput(val1, val2, name) {
     // const form = document.querySelector("#formMain");
     let input1 = val1 ? val1 : "";
     let input2 = val2 ? val2 : "";
@@ -55,7 +57,7 @@ $(document).ready(function () {
     >
       <input type="text" placeholder="key..." id="${id}-in1" value="${input1}" />
       <p>:</p>
-      <input type="text" placeholder="value..." id="${id}-in2" value="${input2}"/>
+      <input type="text" placeholder="value..." id="${id}-in2" value="${input2}" name="${name}"/>
       <svg
         data-id="${id}"
         class="removeInput"

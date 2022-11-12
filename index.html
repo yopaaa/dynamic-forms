@@ -9,15 +9,15 @@
   </head>
 
   <body>
-    <span style="display: flex; gap: 10px; align-items: center">
+    <span style="display: flex; gap: 10px; align-items: center" >
       <p>Actions :</p>
-      <input type="text" placeholder="Type something..." id="formActions" />
+      <input type="text" placeholder="Type something..." id="formActions" onclick="Show('#changeFormAction-btn')"/>
       <select name="method" id="formMethod">
         <option value="get">GET</option>
         <option value="post">POST</option>
       </select>
 
-      <button type="button" onclick="SetForm()">Set</button>
+      <button type="button" onclick="SetForm()" id="changeFormAction-btn" style="display: none;">Set</button>
     </span>
 
     <br /><br>
